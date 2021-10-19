@@ -1,0 +1,577 @@
+.main-content{
+    .strength{
+        height: 80px;
+        border-bottom: 1px solid @intro-border-color;
+        .container{
+            .row{
+                .col{
+                    width: 33.33%;
+                    height: 80px;
+                    text-align: center;
+                    &.freeship {
+                        margin-left: 15px;
+                        padding-left: 3px;
+                        width: 384px;
+                        border-left: 1px solid @intro-border-color;
+                        border-right: 1px solid @intro-border-color;
+                    }
+                    &.support {
+                        width: 400px;
+                        padding-left: 21px;
+                    }
+                    &.payment {
+                        padding-left: 5px;
+                        width: 386px;
+                        border-left: 1px solid @intro-border-color;
+                        border-right: 1px solid @intro-border-color;
+                    }
+                    .title {
+                        font-size: 18px;
+                        font-family: 'ComorantSemi';
+                        font-weight: 700;
+                        font-style: normal;
+                        color: @main-black-color;
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+                        padding-top: 20px;
+                        padding-bottom: 7px;
+                    }
+                    .content {
+                        font-size: 14px;
+                        font-family: 'FiraSans';
+                        font-weight: 400;
+                        color: @main-gray-color;
+                    }
+                }
+            }
+        }
+    }
+    .banner{
+        .container{
+            .row{
+                justify-content: center;
+                align-items: center;
+                height: 330px;
+                .col{
+                    &.title{
+                        text-align: center;
+                        width:66.6666%;
+                        font-family: 'ComorantSemi';
+                        font-size: 34px;
+                        font-weight: 600;
+                        font-style: normal;
+                        padding: 0 12px;
+                        line-height: 48px;
+                        margin-top: -10px;
+                    }
+                }
+            }
+        }
+        .container-fluid {
+            .row-fluid{
+            .col-fluid {
+                position: relative;
+                overflow: hidden;
+                max-height: 520px;
+                margin-bottom: 50px;
+                img {
+                    width: 100%;
+                    display: block;
+                }
+                &.small {
+                    width: 24.9717%;
+                }
+                &.big {
+                    width: 50%;
+                }
+                .detail {
+                    position: absolute;
+                    z-index: 9;
+                    &.item-1 {
+                        left: 0;
+                        right: 0;
+                        bottom: 30px;
+                    }
+                    .name {
+                        text-align: center;
+                        color: @main-black-color;
+                        font-family: 'FiraSans';
+                        font-size: 24px;
+                        font-weight: 400;
+                        font-style: normal;
+                        line-height: 36px;
+                        letter-spacing: 0.05em;
+                        padding-left: 25px;
+                        padding-right: 25px
+                    }
+                    .price {
+                        text-align: center;
+                        color: @main-color;
+                        font-family: 'ComorantSemi';
+                        font-size: 24px;
+                        font-weight: 700;
+                        font-style: normal;
+                        line-height: 36px;
+                        letter-spacing: 0.05em;
+                        margin-top: 12px;
+                        padding-left: 25px;
+                        padding-right: 25px
+                    }
+                    &.item-2 {
+                        width: 280px;
+                        height: 340px;
+                        top: 50%;
+                        right: 64px;
+                        margin-top: -2px;
+                        border: 5px solid white;
+                        .tranformer (translate(0, -50%));
+                        .title {
+                            text-align: center;
+                            color: @main-black-color;
+                            font-family: 'FiraSans';
+                            font-size: 18px;
+                            font-weight: 400;
+                            font-style: normal;
+                            line-height: 64px;
+                            letter-spacing: 0.2em;
+                            margin-top: 16px;
+                            padding-left: 5px;
+                        }
+                        .percent {
+                            text-align: center;
+                            color: @main-black-color;
+                            font-family: 'ConmorantBold';
+                            font-size: 100px;
+                            font-weight: 700;
+                            font-style: normal;
+                            line-height: 36px;
+                            margin-top: 28px;
+                            padding-left: 1px;
+                        }
+                        .content {
+                            text-align: center;
+                            color: @main-black-color;
+                            font-family: 'ConmorantBold';
+                            font-size: 24px;
+                            font-weight: 700;
+                            font-style: normal;
+                            line-height: 64px;
+                            margin-top: 38px;
+                        }
+                        .shop-btn {
+                            text-align: center;
+                            color: @main-black-color;
+                            font-family: 'FiraSans';
+                            font-size: 14px;
+                            font-weight: 700;
+                            font-style: normal;
+                            line-height: 64px;
+                            letter-spacing: 0.2em;
+                            margin-top: 22px;
+                            padding-left: 5px;
+                            text-transform: uppercase;
+                        }
+                    }
+                    &.item-3 {
+                        left: 0;
+                        right: 0;
+                        bottom: 16%;
+                        .title {
+                            text-transform: uppercase;
+                            color: @main-black-color;
+                            font-family: 'FiraSans';
+                            font-size: 14px;
+                            font-weight: 400;
+                            font-style: normal;
+                            line-height: 24px;
+                            letter-spacing: 0.2em;
+                            padding-left: 17%;
+                        }
+                        .content {
+                            text-align: center;
+                            color: @main-color;
+                            font-family: 'ConmorantBold';
+                            font-size: 72px;
+                            font-weight: 700;
+                            font-style: normal;
+                            line-height: 47px;
+                            margin-top: 32px;
+                        }
+                    }
+                    &.item-5 {
+                        left: 0;
+                        right: 0;
+                        bottom: 30px;
+                    }
+                    &.item-6 {
+                        top: 51%;
+                        left: 10%;
+                        bottom: 0;
+                        .tranformer (translate(-9px, -50%));
+                        .title {
+                            padding-top: 1px;
+                            color: @main-black-color;
+                            font-family: 'ConmorantBold';
+                            font-size: 48px;
+                            font-weight: 700;
+                            font-style: normal;
+                            line-height: 56px;
+                        }
+                        .content {
+                            color: #767676;
+                            font-family: 'FiraSans';
+                            font-size: 14px;
+                            font-weight: 400;
+                            font-style: normal;
+                            line-height: 24px;
+                            letter-spacing: 0.05em;
+                            margin-top: 20px;
+                            padding-left: 3px;
+                        }
+                    }
+                }
+                .rectangle {
+                    position: absolute;
+                    top: 50%;;
+                    right: 64px;
+                    margin-top: -2px;
+                    z-index: 8;
+                    width: 0;
+                    height: 0;
+                    border-bottom: 340px solid white;
+                    border-right: 280px solid transparent;
+                    .tranformer (translate(0, -50%));
+                }
+            }
+        }
+        }
+    }
+        .feature-products{
+            margin-bottom: 95px;        
+            .container {
+                .heading {
+                    .disflex();
+                    justify-content: space-between;
+                    align-items: baseline;
+                    padding: 70px 0 62px 0;
+                    .name {
+                        font-family: 'ComorantSemi';
+                        font-weight: 700;
+                        font-style: normal;
+                        font-size: 56px;
+                        color: @main-black-color;
+                    }
+                    .more-btn {
+                        font-family: 'FiraSans';
+                        font-weight: 700;
+                        font-style: normal;
+                        font-size: 14px;
+                        line-height: 24px;
+                        color: @main-black-color;
+                        letter-spacing: 0.15em;
+                        padding-right: 35px;
+                        a {
+                            position: relative;
+                        }
+                        i {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            font-size: 16px;
+                            color: @main-color;
+                            .tranformer (translate(28px, 1px));
+                        }
+                    }
+                }
+                .row {
+                    .col {
+                        width: 25%;
+                        margin-bottom: 25px;
+                        &:hover .product-image-slider .action {
+                            bottom: 0px;
+                        }
+                        &:hover .product-image-slider .slick .slick-prev {
+                            left: 5px;
+                        }
+                        &:hover .product-image-slider .slick .slick-next {
+                            right: 5px;
+                        }
+                        .product-image-slider {
+                            cursor: pointer;
+                            position: relative;
+                            overflow: hidden;
+                            .slick {
+                                img {
+                                    width: 100%;
+                                    display: block;
+                                }
+                                .slick-prev {
+                                    left: -25px;
+                                    z-index: 1;
+                                    .tranformer (translate(0, -100%));
+                                    .transit (all .5s);
+                                    &::before {
+                                        font-weight: 900;
+                                        font-family:'Font Awesome 5 Free';
+                                        content: '\f104';
+                                        color: @main-black-color;
+                                        font-size: 23px;
+                                    }
+                                }
+                                .slick-next {
+                                    right: -25px;
+                                    z-index: 1;
+                                    .tranformer (translate(0, -100%));
+                                    .transit (all .5s);
+                                    &::before {
+                                        content: '\f105';
+                                        font-weight: 900;
+                                        font-family: "Font Awesome 5 Free"; 
+                                        color: @main-black-color;
+                                        font-size: 23px;
+                                    }
+                                }
+                            }
+                            .action {
+                                text-align: center;
+                                position: absolute;
+                                bottom: -40px;
+                                left: 0;
+                                right: 0;
+                                .disflex();
+                                height: 40px;
+                                .transit (all .5s);
+                                .addcart {
+                                    width: 100%;
+                                    background-color: @main-color;
+                                    color: white;
+                                    line-height: 24px;
+                                    font-family: 'Firasans';
+                                    font-weight: 700;
+                                    font-style: normal;
+                                    font-size: 14px;
+                                    letter-spacing: 0.1em;
+                                    padding: 9px 0;
+                                }
+                                .icon {
+                                    flex-basis: 40px;
+                                    flex-grow: 0;
+                                    flex-shrink: 0;
+                                    height: 40px;
+                                    line-height: 40px;
+                                    border-left: 1px solid #eeeded;
+                                    background-color: #5b5b5b;
+                                    i {
+                                        color: #cccccc;
+                                    }
+                                }
+                            }
+                        }
+                        .product-info {
+                            cursor: pointer;
+                            text-align: center;
+                            .name {
+                                font-family: 'Firasans';
+                                font-size: 14px;
+                                font-weight: 400;
+                                font-style: normal;
+                                line-height: 22px;
+                                color: @main-black-color;
+                                letter-spacing: 0.05em;
+                                padding-top: 16px;
+                            }
+                            .price {
+                                font-family: 'ComorantSemi';
+                                font-size: 18px;
+                                font-weight: 700;
+                                font-style: normal;
+                                line-height: 28px;
+                                color: @main-color;
+                                letter-spacing: 0.05em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .blog{
+            background-color: #eee;
+            .container {
+                .heading {
+                    text-align: center;
+                    position: relative;
+                    span {
+                        font-family: 'ComorantSemi';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 56px;
+                        position: absolute;
+                        top: -42px;
+                        left: 50%;
+                        .tranformer (translateX(-50%));
+                    }
+                }
+                .row {
+                    padding-top: 110px;
+                    .col {
+                        width: 33.3333%;
+                        margin-bottom: 30px;
+                        .background {
+                            .disflex();
+                            flex-direction: column;
+                            background-color: white;
+                            height: 100%;
+                            img {
+                                width: 100%;
+                                display: block;
+                            }
+                            .content {
+                                .disflex();
+                                flex-direction: column;
+                                padding: 0 34px;
+                                padding-top: 26px;
+                                .date {
+                                    font-family: 'FiraSans';
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    letter-spacing: 0.1em;
+                                    color: #cccccc;
+                                }
+                                .title {
+                                    font-family: 'ComorantSemi';
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    font-size: 24px;
+                                    letter-spacing: 0.05em;
+                                    line-height: 32px;
+                                    color: @main-black-color;
+                                    padding-top: 23px;
+                                    padding-bottom: 50px;
+                                }
+                            }
+                            .interaction {
+                                height: 59px;
+                                line-height: 52px;
+                                .disflex();
+                                font-family: 'FiraSans';
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 14px;
+                                color: @dark-gray-color;
+                                border-top: 1px solid #eee;
+                                margin: 0 34px;
+                                margin-top: auto;
+                                .view {
+                                    margin-right: 27px;
+                                }
+                                i {
+                                    color: #92c5d9;
+                                    margin-right: 10px;
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .blog-btn {
+                    position: relative;
+                    height: 170px;
+                    span {
+                        position: absolute;
+                        top: 36px;
+                        left: 50%;
+                        .tranformer (translateX(-48%));
+                        font-family: 'ComorantSemi';
+                        font-weight: 400;
+                        font-style: normal;
+                        font-size: 24px;
+                        color: @main-black-color;
+                        margin-left: -4px;
+                        cursor: pointer;
+                        &::after {
+                            position: absolute;
+                            content: '';
+                            bottom: 0;
+                            left: -22px;
+                            right: -22px;
+                            border-bottom: 16px solid white;
+                            z-index: -1;
+                        }
+                    }
+                }
+            }
+        }
+        .brands {
+            .container {
+                .row {
+                    justify-content: center;
+                    .col {
+                        width: 16.6666%;
+                        height: 197px;
+                        .image {
+                            height: 100%;
+                            margin-top: auto;
+                            .disflex();
+                            align-items: center;
+                            opacity: 0.3;
+                            .transit (all .5s);
+                            img {
+                                display: block;
+                                margin: 0 auto;
+                            }
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                        &.brand-item {
+                            &:nth-child(1) {
+                                img {
+                                    width: 114px;
+                                }
+                            }
+                            &:nth-child(2) {
+                                img {
+                                    width: 133px;
+                                }
+                            }
+                            &:nth-child(3) {
+                                img {
+                                    width: 111px;
+                                }
+                            }
+                            &:nth-child(4) {
+                                img {
+                                    width: 117px;
+                                }
+                            }
+                            &:nth-child(5) {
+                                img {
+                                    width: 110px;
+                                }
+                            }
+                            &:nth-child(6) {
+                                img {
+                                    width: 154px;
+                                }
+                            }
+                        }
+                        &:nth-child(1) .image {
+                            padding-bottom: 12px;
+                            padding-right: 7px;
+                        }
+                        &:nth-child(2) .image {
+                            padding-top: 6px;
+                        }
+                        &:nth-child(6) .image {
+                            padding-top: 20px;
+                        }
+                        &:nth-child(6) .image {               
+                            padding-bottom: 2px;
+                            padding-left: 2px;
+                        }
+                    }
+                }
+            }
+        }
+}

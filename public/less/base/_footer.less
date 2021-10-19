@@ -1,0 +1,106 @@
+footer {
+    background-color: @main-black-color;
+    .footer-top {
+        .disflex();
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-top: 63px;
+        padding-bottom: 74px;
+        .logo {
+            max-width: 50%;
+        }
+        nav {
+            padding-bottom: 10px;
+            .nav-item {
+                font-family: 'FiraSans';
+                font-weight: 700;
+                font-style: normal;
+                font-size: 14px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: @main-gray-color;
+                padding: 0 15px;
+                &:first-child {
+                    margin-left: -23px;
+                }
+                &.active {
+                    color: @main-color;
+                }
+                &:hover {
+                    color: @main-color;
+                }
+            }
+        }
+        .subscribe {
+            max-width: 50%;
+            width: 157px;
+            height: 36px;
+            font-family: 'FiraSans';
+            font-weight: 700;
+            font-style: normal;
+            font-size: 14px;
+            letter-spacing: 0.15em;
+            color: @main-gray-color;
+            border: 1px solid @dark-gray-color;
+            text-transform: uppercase;
+            line-height: 36px;
+            text-align: right;
+            margin-bottom: 1px;
+            i {
+                color: @main-color;
+                margin-right: 19px;
+                margin-left: 13px;
+            }
+        }
+        
+    }
+    .footer-bottom {
+        .disflex();
+        justify-content: space-between;
+        border-top: 1px solid #2b2b2b;
+        padding-top: 25px;
+        .contact {
+            font-family: 'FiraSans';
+            font-weight: 400;
+            font-style: normal;
+            font-size: 14px;
+            color: @dark-gray-color;
+            margin-bottom: 76px;
+            .info {
+                margin-top: 17px;
+                margin-bottom: 12px;
+            }
+        }
+        .social {
+            .disflex();
+            .item {
+                display: block;
+                height: 48px;
+                width: 48px;
+                line-height: 48px;
+                text-align: center;
+                border: 1px solid #4e4e4e;
+                border-radius: 48px;
+                margin-left: 9px;
+                &:first-child {
+                    margin-left: 0;
+                }
+                &.active {
+                    background-color: @main-color;
+                    i {
+                        color: @main-black-color;
+                    }
+                }
+                &:hover {
+                    background-color: @main-color;
+                    i {
+                        color: @main-black-color;
+                    }
+                }
+                i {
+                    color: @main-gray-color;
+                }
+            }
+        }
+    }
+}
