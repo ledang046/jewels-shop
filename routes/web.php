@@ -29,6 +29,10 @@ Route::get('/show-detail/{id}',[ProductController::class,'showProdDetail']);
 
 Route::post('/insert-rating',[ProductController::class,'insertRating']);
 
+Route::post('/load-comment',[ProductController::class,'loadComment']);
+
+Route::post('/send-comment',[ProductController::class,'sendComment']);
+
 /** Category */
 
 /** Cart */

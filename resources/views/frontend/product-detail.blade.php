@@ -23,7 +23,7 @@
 						<h3 class="product-title">{{$record->name}}</h3>
 						<div class="rating">
 							<div class="stars">
-							<ul class="list-inline" title="Average Rating">
+							<ul style="display: flex;" title="Average Rating">
 								@for($count=1;$count<=5;$count++)
 								@php
 									if($count<=$rating){
@@ -70,19 +70,20 @@
 				<div class="row tablist">
 					<ul class="nav nav-tabs" id="myTab" role="tablist">
 						<li class="nav-item">
-							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Average Rating</a>
+							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Rating</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+							<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Comment</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+							<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Info</a>
 						</li>
 					</ul>
 				</div>
 				<div class="tab-content" id="myTabContent">
 					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 						<div class="content-1">
+							<h4 class="text-center mt-2">Rate ours product here!</h4>
 							<ul class="list-inline" title="Average Rating">
 								@for($count=1;$count<=5;$count++)
 								@php
@@ -104,7 +105,38 @@
 						</div>
 					</div>
 					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-						<div class="content-2">This is content two</div>
+						<div class="content-2">
+							<div class="container">
+							<div class="be-comment-block">
+								<h1 class="comments-title">Comments (3)</h1>
+								<form>
+									@csrf
+									<input type="hidden" name="comment_product_id" class="comment_product_id" value="{{$record->id}}">
+									<div id="notify-comm"></div>
+									<div id="comment-show"></div>
+								</form>
+								<form class="form-block" id="submit-form" action="#">
+									<div class="row">
+										<div class="col-xs-12 col-sm-6">
+											<div class="form-group fl_icon">
+												<div class="icon"><i class="fa fa-user"></i></div>
+												<input class="form-input name" type="text" name="name" placeholder="Your name">
+											</div>
+										</div>
+										<div class="col-sm-12">									
+											<div class="form-group">
+												<textarea class="form-input comment" name="comment" required="" placeholder="Your text"></textarea>
+											</div>
+											<div class="submit-btn">
+												<button class="btn btn-warning" type="submit">Save</button>
+											</div>
+										</div>
+										
+									</div>
+								</form>
+							</div>
+							</div>
+						</div>
 					</div>
 					<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 						<div class="content-3">This is content three</div>
@@ -113,16 +145,17 @@
 			</div>
 	</div>
 	<script>
+		$('#myTab a').on('click', function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
 		// Sử dụng khi k dùng form submit
 		$.ajaxSetup({
 		headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 		}
 		});
-		$('#myTab a').on('click', function(e) {
-			e.preventDefault()
-			$(this).tab('show')
-		});
+		// Rating
 		function remove_background(product_id)
 		{
 			for(var count = 1;count <= 5; count++)
@@ -166,5 +199,47 @@
 				}
 			});
 		});
+		// End Rating
+		// Comment
+		$(document).ready(function()
+		{
+			load_comment();
+			function load_comment()
+			{
+			var product_id = $('.comment_product_id').val();
+			var _token = $('input[name="_token"]').val();
+				$.ajax({
+					url:"{{url('/load-comment')}}",
+					method:"POST",
+					data:{product_id:product_id,_token:_token},
+					success:function(data){	
+						$('#comment-show').html(data);
+					}
+				});
+			}
+
+			$('#submit-form').submit(function(e){
+				e.preventDefault();	
+			var product_id = $('.comment_product_id').val();
+			var name = $('.name').val();
+			var comment = $('.comment').val();
+			var _token = $('input[name="_token"]').val();
+			$.ajax({
+					url:"{{url('/send-comment')}}",
+					method:"POST",
+					data:{product_id:product_id,name:name,comment:comment,_token:_token},
+					success:function(data){	
+						$('#notify-comm').html('<p class="text text-success">Comment succsessful!, Commentary is pending approval.</p>');
+						load_comment();
+						$('#notify-comm').fadeOut(4000);
+						$('.name').val('');
+						$('.comment').val('');
+ 
+						
+					}
+				});
+			});
+		});
+		
 	</script>
 @endsection
