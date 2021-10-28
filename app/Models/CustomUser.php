@@ -36,4 +36,9 @@ class CustomUser extends Authenticatable
     {
       return $this->passcode;
     }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class,'customer_id');
+    }
 }

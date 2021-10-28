@@ -34,4 +34,22 @@ class CustomuserController extends Controller
             return redirect()->back()->with('errorMsg',"Your current password is incorrect!");
         }
     }
+    public function showInfo($id)
+    {
+        $user = CustomUser::where("id","=",$id)->first();
+        return view("backend.change_info",["record"=>$user]);
+    }
+
+    public function updateUser(Request $request, $id)
+    {
+        $users = CustomUser::find($id);
+        //update name
+        $users->name = $request->name;
+        $users->address = $request->address;
+        $users->phonenumber = $request->phonenumber;
+        $users->save();
+
+        return redirect()->back()->with('successMsg',"Change info success!");
+    }
+    
 }

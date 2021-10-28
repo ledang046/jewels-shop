@@ -4,8 +4,10 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CustomuserController;
+use App\Http\Controllers\OrderController;
 use App\Models\Category;
 use App\Models\CustomUser;
+use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -59,9 +61,18 @@ Route::post('/Check-coupon',[CartController::class,'CheckCoupon'])->name('check.
 /*Customuser */
 Route::get('/manage-user',[CustomuserController::class,'manageUser']);
 
+Route::get('/show-info/{id}',[CustomuserController::class,'showInfo']);
+
 Route::get('/edit-password/{id}',[CustomuserController::class,'editPassword']);
 
 Route::post('/change-password/{id}',[CustomuserController::class,'changePassword']);
+
+Route::post('/change-info/{id}',[CustomuserController::class,'updateUser']);
+
+/* Order */
+Route::get('/get-order-list/{id}',[OrderController::class,'getListOrder']);
+
+Route::get('/show-detail-order/{id}',[OrderController::class,'showDetailOrder']);
 
 Auth::routes();
 
