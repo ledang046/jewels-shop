@@ -3,7 +3,9 @@
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CustomuserController;
 use App\Models\Category;
+use App\Models\CustomUser;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -54,14 +56,15 @@ Route::post('/Cart-payment',[CartController::class,'CartPayment'])->name('paymen
 
 Route::post('/Check-coupon',[CartController::class,'CheckCoupon'])->name('check.coupon');
 
+/*Customuser */
+Route::get('/manage-user',[CustomuserController::class,'manageUser']);
+
+Route::get('/edit-password/{id}',[CustomuserController::class,'editPassword']);
+
+Route::post('/change-password/{id}',[CustomuserController::class,'changePassword']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Request;
-Route::get('/test',function(Request $req)
-{
-    $req->Session()->forget('Cart'); 
-    $req->Session()->forget('coupon');
-});
+

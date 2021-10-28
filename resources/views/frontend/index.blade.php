@@ -73,6 +73,10 @@
                                     <li class="item"><a href="#">SERVICES</a></li>
                                     <li class="item"><a href="#">PAGES</a></li>
                                     <li class="item"><a href="#">CONTACT</a></li>
+                                    @if (Auth::check())
+                                    <li class="item"><a href="{{url('/manage-user')}}"><i class="fas fa-users-cog"></i> SETTING</a></li>
+                                    @else
+                                    @endif
                                 </ul>
                                 @if (Auth::check())
                                 <div class="login-regist">
